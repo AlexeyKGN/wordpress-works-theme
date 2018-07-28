@@ -114,17 +114,20 @@ function theme_option_page() {
         <h2><?php echo get_admin_page_title() ?></h2>
         <form method="post" enctype="multipart/form-data" action="options.php">
             <?php
-            settings_fields( 'theme_options' );
-            do_settings_sections( $url_page );
+                settings_fields( 'theme_options' );
+                do_settings_sections( $url_page );
+                $text_section_logo = esc_attr(get_option('text_section_logo'));
+//              update_option('theme_options', 'MiroTex');
+//                if($text_section_logo == "" || $text_section_logo == null){
+//                    $text_section_logo = "default";
+//                    return $text_section_logo;
+//                }
             ?>
-            <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>"/>
-            </p>
+                <input type="submit" name="form_submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>"/>
         </form>
     </div>
     <?php
 }
-
 /**
  *Register the settings.
  *My settings will be stored in the database called theme_options
@@ -133,7 +136,7 @@ function register_settings_in_theme() {
     global $url_page;
     
     register_setting( 'theme_options', 'theme_options' );
-    add_settings_section( 'text_section_logo', 'Add your text for header', '', $url_page );
+    add_settings_section( 'text_section_logo', '', '', $url_page );
     
     $theme_field_params = array(
         'type'      => 'text', // type
@@ -141,10 +144,10 @@ function register_settings_in_theme() {
         'desc'      => 'Example of a regular text field.', // description
         'label_for' => 'my_text' // allows you to make the name of the setting a label (if you do not understand what it is, you can not use it), in theory it should be the same with the id parameter)
     );
-    add_settings_field( 'my_logo_text_field', '', 'theme_option_display_settings', $url_page, 'text_section_logo', $theme_field_params );
+    add_settings_field( 'my_logo_text_field', 'Add your text for header', 'theme_option_display_settings', $url_page, 'text_section_logo', $theme_field_params );
     
     
-    add_settings_section( 'image_section_upload', 'Upload image for header', '', $url_page );
+    add_settings_section( 'image_section_upload', '', '', $url_page );
     
     $theme_field_params = array(
         'type'      => 'file',
@@ -152,48 +155,32 @@ function register_settings_in_theme() {
         'desc'      => 'Require Logo.',
         'label_for' => 'my_file'
     );
-    add_settings_field( 'my_logo_field', '', 'theme_option_display_settings', $url_page, 'image_section_upload', $theme_field_params );
+    add_settings_field( 'my_logo_field', 'Upload image for header', 'theme_option_display_settings', $url_page, 'image_section_upload', $theme_field_params );
 }
 
 add_action( 'admin_init', 'register_settings_in_theme' );
 
 
-function theme_option_display_settings( $args ) {
+function theme_option_display_settings($args) {
+    
     $type       = $args['type'];
     $id         = $args['id'];
     $desciption = $args['desc'];
     
-
-//    extract( $args );
-//    $option_name = 'theme_options';
-    
     ?>
     <?php
     
-    switch ( $type ) {
+    switch ($type ) {
         case 'text':
-            if (!empty($type)){
-                echo "<input  id=\"my_text\" type=\"text\" name=\"add_your_logo_text_in_header\" />";
-            }
-            else{
-                exit();
-            }
-            break;
-        
+            ?>
+              <input  id="<?php echo $id?>" type="text" name="<?= $desciption;?>" value="" />
+            <?php
+        break;
         case 'file':
-            echo "<input type=\"file\" name=\"add_your_image_in_header\" />";
+            ?>
+             <input  id='$id' type="file" name= "<?= $desciption;?>\" />";
+            <?php
             break;
-
-
-//            <tr valign="top">
-//                <th scope="row">Add your logo-text in header</th>
-//                <td><input  id="my_text" type="text" name="add_your_logo_text_in_header" /></td>
-//            </tr>
-//
-//            <tr valign="top">
-//                <th scope="row">Add your image in header</th>
-//                <td><input type="file" name="add_your_image_in_header" /></td>
-//            </tr>
     }
     ?>
     <?php

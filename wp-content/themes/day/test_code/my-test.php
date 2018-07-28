@@ -16,7 +16,7 @@
 <!--        <table class="form-table">-->
 <!--            <tr valign="top">-->
 <!--                <th scope="row">Add your logo-text in header</th>-->
-<!--                <td><input type="text" name="add_your_logo_text_in_header" value="--><?php //echo get_option('add_your_logo_text_in_header'); ?><!--" /></td>-->
+<!--                <td>;<input type="text" name="add_your_logo_text_in_header" value="--><?php //echo get_option('add_your_logo_text_in_header') ?><!--" /></td>-->
 <!--            </tr>-->
 <!--            -->
 <!--            <tr valign="top">-->
