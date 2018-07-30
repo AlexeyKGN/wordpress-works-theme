@@ -31,7 +31,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand">
-                    <a href=""><h1>Day</h1></a>
+                    <?php $text_header = get_option('options1')?>
+                    <a href="<?php echo home_url();?>"><h1><?php echo $text_header?></h1></a>
                 </div>
             </div>
             <div class="navbar-collapse collapse">

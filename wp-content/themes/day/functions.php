@@ -84,109 +84,12 @@ $menu_args = array(
 /**
  * <-------- add_setup_theme
  */
-$url_page = 'my_parameters.php'; // This is part of the URL of the page, I recommend using a string value, because in this case there will be no dependence on what file you will insert it into.
-
-/**
- * Function that adds a page to the Settings menu item
- */
-function theme_options() {
-    global $url_page;
-    
-    add_menu_page(
-        'Custom settings theme',
-        'Custom settings theme',
-        'manage_options',
-        $url_page,
-        'theme_option_page',
-        '',
-        80 );
-    
+$option_theme_php = __DIR__ . '\inc\theme_options.php';
+if (file_exists($option_theme_php)) {
+    require $option_theme_php;
+} else {
+    return;
 }
-
-add_action( 'admin_menu', 'theme_options' );
-
-/**
- * Callback function
- */
-function theme_option_page() {
-    global $url_page; ?>
-    <div class="wrap">
-        <h2><?php echo get_admin_page_title() ?></h2>
-        <form method="post" enctype="multipart/form-data" action="options.php">
-            <?php
-                settings_fields( 'theme_options' );
-                do_settings_sections( $url_page );
-                $text_section_logo = esc_attr(get_option('text_section_logo'));
-//              update_option('theme_options', 'MiroTex');
-//                if($text_section_logo == "" || $text_section_logo == null){
-//                    $text_section_logo = "default";
-//                    return $text_section_logo;
-//                }
-            ?>
-                <input type="submit" name="form_submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>"/>
-        </form>
-    </div>
-    <?php
-}
-/**
- *Register the settings.
- *My settings will be stored in the database called theme_options
- */
-function register_settings_in_theme() {
-    global $url_page;
-    
-    register_setting( 'theme_options', 'theme_options' );
-    add_settings_section( 'text_section_logo', '', '', $url_page );
-    
-    $theme_field_params = array(
-        'type'      => 'text', // type
-        'id'        => 'my_text',
-        'desc'      => 'Example of a regular text field.', // description
-        'label_for' => 'my_text' // allows you to make the name of the setting a label (if you do not understand what it is, you can not use it), in theory it should be the same with the id parameter)
-    );
-    add_settings_field( 'my_logo_text_field', 'Add your text for header', 'theme_option_display_settings', $url_page, 'text_section_logo', $theme_field_params );
-    
-    
-    add_settings_section( 'image_section_upload', '', '', $url_page );
-    
-    $theme_field_params = array(
-        'type'      => 'file',
-        'id'        => 'my_file',
-        'desc'      => 'Require Logo.',
-        'label_for' => 'my_file'
-    );
-    add_settings_field( 'my_logo_field', 'Upload image for header', 'theme_option_display_settings', $url_page, 'image_section_upload', $theme_field_params );
-}
-
-add_action( 'admin_init', 'register_settings_in_theme' );
-
-
-function theme_option_display_settings($args) {
-    
-    $type       = $args['type'];
-    $id         = $args['id'];
-    $desciption = $args['desc'];
-    
-    ?>
-    <?php
-    
-    switch ($type ) {
-        case 'text':
-            ?>
-              <input  id="<?php echo $id?>" type="text" name="<?= $desciption;?>" value="" />
-            <?php
-        break;
-        case 'file':
-            ?>
-             <input  id='$id' type="file" name= "<?= $desciption;?>\" />";
-            <?php
-            break;
-    }
-    ?>
-    <?php
-}
-
-
 /**
  * THE END BLOCK add_setup_theme -------->
  */
