@@ -32,9 +32,9 @@ add_action( 'wp_enqueue_scripts', 'add_scripts_theme' );
 if ( ! function_exists( 'day_theme_setup' ) ) {
     
     function day_theme_setup() {
-        //Loads the translation file of the theme (.mo) into memory, for further work with it.
-        
         add_theme_support( 'title-tag' );
+    
+        add_theme_support( 'post-thumbnails' );
         
         
         // add_custom_logo
@@ -53,14 +53,15 @@ if ( ! function_exists( 'day_theme_setup' ) ) {
             'comment_form',
             'comment_list',
             'gallery',
-            'caption'
+            'caption',
+            'image',
         ) );
         
         add_theme_support( 'post-formats', array(
             'aside',
-            'image',
             'video',
-            'gallery'
+            'gallery',
+            'post-thumbnails'
         
         ) );
         
@@ -87,12 +88,18 @@ $menu_args = array(
 $option_theme_php = __DIR__ . '\inc\theme_options.php';
 if (file_exists($option_theme_php)) {
     require $option_theme_php;
-} else {
-    return;
-}
+} else return;
+
+
+$custom_post_type_slider = __DIR__ . '\inc\custom_post_type_slider.php';
+    if(file_exists($custom_post_type_slider)){
+        require $custom_post_type_slider;
+    } else return;
+    
 /**
- * THE END BLOCK add_setup_theme -------->
+ * slider block start <-----------------
  */
+
 
 
 ?>

@@ -6,7 +6,7 @@ function setup_theme_admin_menus(){
 
    add_menu_page(
    'Theme Settings',
-   'Day Theme',
+   'Day Custom Settings',
    'manage_options',
    'day_theme_settings',
    'day_theme_settings_page');
@@ -16,16 +16,12 @@ function setup_theme_admin_menus(){
 
 function settings_function_group(){
     register_setting('settings_function_group','options1');
-//    register_setting('settings_function_group','options2');
+    register_setting('settings_function_group','options2');
 }
 
 function day_theme_settings_page() {
-//    if ( current_user_can( 'manage_options' ) ) {
-//        wp_die( 'Yoy do not  have sufficient permissions to access this page' );
-//    }
-    
+
     $options1_value = esc_attr( get_option( 'options1' ) );
-    //$options2_value = esc_attr(get_option('options2'));
     
     if ( $options1_value == "" ) {
         $options1_value = "Your text logo";
