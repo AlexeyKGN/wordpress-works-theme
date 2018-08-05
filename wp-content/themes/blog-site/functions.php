@@ -4,100 +4,92 @@
 /**
  * require all scripts and styles
  */
-function load_style_script(){
-    wp_enqueue_script('jquery_my',get_template_directory_uri().'/js/jquery-1.10.1.min.js');
-    wp_enqueue_script('jqFancyTransitions.1.8.min',get_template_directory_uri().'/js/jqFancyTransitions.1.8.min.js');
+function load_style_script() {
+    wp_enqueue_script( 'jquery_my', get_template_directory_uri() . '/js/jquery-1.10.1.min.js' );
+    wp_enqueue_script( 'jqFancyTransitions.1.8.min', get_template_directory_uri() . '/js/jqFancyTransitions.1.8.min.js' );
     
     
-    wp_enqueue_style('style', get_template_directory_uri().'/style.css');
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
 }
 
-add_action('wp_enqueue_scripts','load_style_script');
+add_action( 'wp_enqueue_scripts', 'load_style_script' );
 
 
 /**
  * add sidebars in theme
  */
-register_sidebar(array(
-    'name' => 'Menu',
-    'id' => 'menu_header',
+register_sidebar( array(
+    'name'          => 'Menu',
+    'id'            => 'menu_header',
     'before_widget' => '',
-    'after_widget' => ''));
+    'after_widget'  => ''
+) );
 
-register_sidebar(array(
-    'name' => 'Sidebar',
-    'id' => 'sidebar',
+
+register_sidebar( array(
+    'name'          => 'Social links',
+    'id'            => 'social_header',
+    'before_widget' => '',
+    'after_widget'  => ''
+) );
+
+register_sidebar( array(
+    'name'          => 'Sidebar',
+    'id'            => 'sidebar',
     'before_widget' => '<div class="sidebar-widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3>',
-    'after_title'   => '</h3>'));
+    'after_title'   => '</h3>'
+) );
 
-register_sidebar(array(
-    'name' => 'Footer',
-    'id' => 'footer',
+register_sidebar( array(
+    'name'          => 'Footer',
+    'id'            => 'footer',
     'before_widget' => '<div class="footer-info %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3>',
-    'after_title'   => '</h3>'));
+    'after_title'   => '</h3>'
+) );
 
 
-add_theme_support('post-thumbnails');
+add_theme_support( 'post-thumbnails' );
 
-set_post_thumbnail_size(180,180 );
+set_post_thumbnail_size( 180, 180 );
 
-if ( ! function_exists( 'twentyten_comment' ) ) :
-    /**
-     * Template for comments and pingbacks.
-     *
-     * To override this walker in a child theme without modifying the comments template
-     * simply create your own twentyten_comment(), and that function will be used instead.
-     *
-     * Used as a callback by wp_list_comments() for displaying the comments.
-     *
-     * @since Twenty Ten 1.0
-     */
-    function twentyten_comment( $comment, $args, $depth ) {
-        $GLOBALS['comment'] = $comment;
-        switch ( $comment->comment_type ) :
-            case '' :
-                ?>
-                <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-                <div id="comment-<?php comment_ID(); ?>">
-                    <div class="comment-author vcard">
-                        <?php echo get_avatar( $comment, 40 ); ?>
-                        <?php printf( __( '%s<span class="says"></span>', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-                    </div><!-- .comment-author .vcard -->
-                    <?php if ( $comment->comment_approved == '0' ) : ?>
-                        <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
-                        <br />
-                    <?php endif; ?>
-                    
-                    <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-                            <?php
-                            /* translators: 1: date, 2: time */
-                            printf( __( '%1$s в %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Редактировать)', 'twentyten' ), ' ' );
-                        ?>
-                    </div><!-- .comment-meta .commentmetadata -->
-                    
-                    <div class="comment-body"><?php comment_text(); ?></div>
-                    
-                    <div class="reply">
-                        <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-                    </div><!-- .reply -->
-                </div><!-- #comment-##  -->
-                
-                <?php
-                break;
-            case 'pingback'  :
-            case 'trackback' :
-                ?>
-                <li class="post pingback">
-                <p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' ); ?></p>
-                <?php
-                break;
-        endswitch;
-    }
-endif;
+/**
+ * Template for comments and pingbacks
+ */
+$twenty_comment = __DIR__ . '\inc\twenty_comment.php';
+if ( file_exists( $twenty_comment ) ) {
+    require $twenty_comment;
+} else {
+    echo "file not found";
+    return;
+}
+
+/**
+ * banner
+ */
+
+$custom_banner = __DIR__ . '\inc\custom_banner.php';
+if ( file_exists( $custom_banner ) ) {
+    require $custom_banner;
+} else {
+    echo "file not found";
+    return;
+}
+
+/**
+ * slider
+ */
+
+$custom_slider = __DIR__ . '\inc\custom_slider.php';
+if ( file_exists( $custom_slider ) ) {
+    require $custom_slider;
+} else {
+    echo "file not found";
+    return;
+}
 
 
 

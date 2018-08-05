@@ -5227,8 +5227,14 @@ function _device_can_upload() {
  * @return bool True if the path is a stream URL.
  */
 function wp_is_stream( $path ) {
-	$wrappers = stream_get_wrappers();
-	$wrappers_re = '(' . join('|', $wrappers) . ')';
+	if ( false === strpos( $path, '://' ) ) {
+		// $path isn't a stream
+		return false;
+	}
+
+	$wrappers    = stream_get_wrappers();
+	$wrappers    = array_map( 'preg_quote', $wrappers );
+	$wrappers_re = '(' . join( '|', $wrappers ) . ')';
 
 	return preg_match( "!^$wrappers_re://!", $path ) === 1;
 }
@@ -6047,7 +6053,7 @@ function wp_privacy_delete_old_export_files() {
 	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
 	$exports_dir  = wp_privacy_exports_dir();
-	$export_files = list_files( $exports_dir, 100, array( 'index.php' ) );
+	$export_files = list_files( $exports_dir, 100, array( 'index.html' ) );
 
 	/**
 	 * Filters the lifetime, in seconds, of a personal data export file.

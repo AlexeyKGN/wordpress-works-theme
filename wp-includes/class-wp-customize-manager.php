@@ -4084,13 +4084,13 @@ final class WP_Customize_Manager {
 							<# _.each( _.extend( inputAttrs ), function( value, key ) { #>
 								{{{ key }}}="{{ value }}"
 							<# } ); #>
-						>{{ inputAttrs.value }}</#>
+						>{{ inputAttrs.value }}</button>
 					<# } else if ( 'textarea' === data.type ) { #>
 						<textarea
 							<# _.each( _.extend( inputAttrs ), function( value, key ) { #>
 								{{{ key }}}="{{ value }}"
 							<# }); #>
-						>{{ inputAttrs.value }}</#>
+						>{{ inputAttrs.value }}</textarea>
 					<# } else if ( 'select' === data.type ) { #>
 						<# delete inputAttrs.type; #>
 						<select
@@ -4111,7 +4111,7 @@ final class WP_Customize_Manager {
 								#>
 								<option value="{{ value }}">{{ text }}</option>
 							<# } ); #>
-						</#>
+						</select>
 					<# } else { #>
 						<input
 							<# _.each( _.extend( inputAttrs ), function( value, key ) { #>
