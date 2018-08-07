@@ -15,10 +15,9 @@
 
 .elastislide-wrapper {
 	position: relative;
-	background-color: rgba(0,0,0,0.6);;
+	background-color: rgba(0,0,0,0.6);
 	margin: 0 auto;
 	min-height: 60px;
-	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .elastislide-wrapper.elastislide-loading {
@@ -29,8 +28,7 @@
 
 .elastislide-horizontal {
 	padding: 30px 60px;
-	margin-bottom:30px;
-	margin-top: -40px;
+	margin:-50px 0 30px 0;
 }
 
 .elastislide-vertical {
@@ -90,11 +88,12 @@
 
 .elastislide-wrapper nav span {
 	position: absolute;
-	background:url(../images/nav.jpg) no-repeat 0 0 ;
+	background: url(../images/nav.jpg) no-repeat 0 0;
 	width: 38px;
 	height: 38px;
 	text-indent: -9000px;
 	cursor: pointer;
+	opacity: 0.8;
 }
 
 .elastislide-wrapper nav span:hover {
@@ -103,7 +102,7 @@
 
 .elastislide-horizontal nav span {
 	top: 50%;
-	left: 10px;
+	left: 20px;
 	margin-top: -19px;
 }
 
@@ -111,13 +110,13 @@
 	top: 10px;
 	left: 50%;
 	margin-left: -11px;
-	background-position: -17px 5px;
+	background-position: -38px 0;
 }
 
 .elastislide-horizontal nav span.elastislide-next {
-	right: 10px;
+	right: 20px;
 	left: auto;
-	background-position: 0px -38px;
+	background-position: 0 -38px;
 }
 
 .elastislide-vertical nav span.elastislide-next {

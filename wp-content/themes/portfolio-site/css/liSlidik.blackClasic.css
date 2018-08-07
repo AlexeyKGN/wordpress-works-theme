@@ -11,14 +11,11 @@
 #slide_2 .captionWrap:hover {
 	opacity:1
 }
-#slide_2 img{
-	border:0;
-}
 #slide_2 .caption {
 	padding:10px 60px;
+	height:40px;
 	color:#fff;
 	font:12px/1.2em Arial, Helvetica, sans-serif;
-	height:40px;
 }
 #slide_2 .dotted {
 	width:100%; 
@@ -59,10 +56,10 @@
 	width:38px;
 	position:absolute;
 	bottom:0;
-	margin:0 0 10px 0;
+	margin:-15px 0 10px 0;
 	z-index:5;
 	cursor:pointer;
-	background:url(../images/nav.jpg) 0 0 no-repeat;
+	background: url(../images/nav.jpg) 0 0 no-repeat;
 	opacity:0.5
 }
 #slide_2 .next {
@@ -71,16 +68,15 @@
 }
 #slide_2 .prev {
 	left:10px;
-	background-position:0 0;
+	
 }
 #slide_2 .next:hover,
 #slide_2 .prev:hover {
 	opacity:1
 }
 
-
 .portfolio-close{
-	position:absolute; top:0; right:0; z-index:5;
+	position: absolute; top:0; right:0; z-index:5;
 }
 	.portfolio-close a{
 		background:url(../images/close-btn.png) no-repeat 0 0; width:38px; height:38px; display:block;
