@@ -76,14 +76,14 @@
 ----------------------------------*/
 
 /* states and images */
-.ui-icon { width: 24px; height: 24px; background-image: url(../../images/acardeon.jpg); }
+.ui-icon { width: 24px; height: 24px; background-image: url(../images/acardeon.jpg); }
 .ui-widget-content .ui-icon {background-image: url(images/ui-icons_222222_256x240.png); }
-.ui-widget-header .ui-icon {background-image: url(../../images/acardeon.jpg); }
-.ui-state-default .ui-icon { background-image: url(../../images/acardeon.jpg); }
-.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(../../images/acardeon.jpg); }
-.ui-state-active .ui-icon {background-image: url(../../images/acardeon.jpg); }
-.ui-state-highlight .ui-icon {background-image: url(../../images/acardeon.jpg); }
-.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(../../images/acardeon.jpg); }
+.ui-widget-header .ui-icon {background-image: url(../images/acardeon.jpg); }
+.ui-state-default .ui-icon { background-image: url(../images/acardeon.jpg); }
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(../images/acardeon.jpg); }
+.ui-state-active .ui-icon {background-image: url(../images/acardeon.jpg); }
+.ui-state-highlight .ui-icon {background-image: url(../images/acardeon.jpg); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(../images/acardeon.jpg); }
 
 /* positioning */
 

@@ -24,7 +24,6 @@ function add_scripts_theme() {
 
 add_action( 'wp_enqueue_scripts', 'add_scripts_theme' );
 
-
 /**
  * automatic download of my settings during the installation of the theme
  */

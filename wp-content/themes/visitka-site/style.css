@@ -1,10 +1,18 @@
+/*   
+Theme Name: Theme 3
+Theme URI: http://wp-themes/
+Description: site of a design company
+Author: Alexey Kurgan
+Author URI: http://wp-themes/
+Version: 1.0
+*/
 @font-face {
     font-family: 'pt_sans';
-    src: url('font/pt-sans-webfont.eot');
-    src: url('font/pt-sans-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/pt-sans-webfont.woff') format('woff'),
-         url('font/pt-sans-webfont.ttf') format('truetype'),
-         url('font/pt-sans-webfont.svg#pt_sansregular') format('svg');
+    src: url('font/pt-sans.eot');
+    src: url('font/pt-sans.eot?#iefix') format('embedded-opentype'),
+         url('font/pt-sans.woff') format('woff'),
+         url('font/pt-sans.ttf') format('truetype'),
+         url('font/pt-sans.svg#pt_sansbold_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -21,9 +29,6 @@ a{
 a:hover{
 	text-decoration:underline;
 }
-.clr{
-	clear:both;
-}
 .img-lefter{
 	background: none repeat scroll 0 0 #FFFFFF;
     float: left;
@@ -31,159 +36,175 @@ a:hover{
     position: relative;
     z-index: 10;
 }
+.clr{
+	clear:both;
+}
 body{
-	background:#e9e9e9 url(images/body-bg.jpg); border-top:5px solid #d7a229; color:#333; line-height:1.8;
+	background:#e8e8e8 url(images/body-bg.jpg); border-top:5px solid #d7a229; color:#333; line-height:1.8;
 }
 .karkas{
 	background:#fff; width:1000px; margin:0 auto;
 }
-	.header{
-		background:url(images/head-bg.jpg); overflow:hidden; padding:35px 30px 0 30px;
+.header{
+	background:url(images/head-bg.jpg); overflow:hidden; padding:35px 30px 0 30px;
+}
+.logo{
+	float:left;
+}
+.head-contakt{
+	float:right; color:#d4d4d4; font-size:12px; font-family: "Droid Serif"; margin-bottom:3px;
+}
+	.head-contakt a{
+		 color:#d4d4d4;
 	}
-		.logo{
+	.head-contakt img{
+		vertical-align: baseline; margin:0 7px 0 0;
+	}
+.head-soc{
+	clear:right; float:right; margin-bottom:35px;
+}
+	.head-soc img{
+		margin-left:5px;
+	}
+.menu{
+	clear:both; float:left; font:bold 12px "Droid Serif"; width:100%; 
+	border-top:1px solid #4b4e51; 
+	border-left:1px solid #4b4e51;
+	border-right:1px solid #4b4e51;
+	border-radius:5px 5px 0 0;
+	background: rgb(62,66,68); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNlNDI0NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzNzNiM2QiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgba(62,66,68,1) 0%, rgba(55,59,61,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,66,68,1)), color-stop(100%,rgba(55,59,61,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(62,66,68,1) 0%,rgba(55,59,61,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(62,66,68,1) 0%,rgba(55,59,61,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(62,66,68,1) 0%,rgba(55,59,61,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(62,66,68,1) 0%,rgba(55,59,61,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e4244', endColorstr='#373b3d',GradientType=0 ); /* IE6-8 */
+	}
+	.menu ul{
+		list-style:none;
+	}
+	.menu li{
+		float:left; border-left:1px solid #494d50; border-right:1px solid #303436; position:relative; top:-1px;
+	}
+	.menu li:last-child{
+		border-right:none;
+	}
+	.menu li:first-child{
+		border-left:none;
+	}
+		.menu li a{
+			color:#fff; display:block; padding:13px 17px; border-bottom:4px solid #35393b; border-top:1px solid #4a4e50; text-shadow:1px -1px 1px #000;
+		}
+		.menu li a:hover{
+			 border-bottom:4px solid #d29624; text-decoration:none; border-top:1px solid #4b4e51;
+			 background: rgb(60,64,66); /* Old browsers */
+			/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNjNDA0MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNTI3MjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			background: -moz-linear-gradient(top,  rgba(60,64,66,1) 0%, rgba(37,39,41,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(60,64,66,1)), color-stop(100%,rgba(37,39,41,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(60,64,66,1) 0%,rgba(37,39,41,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(60,64,66,1) 0%,rgba(37,39,41,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(60,64,66,1) 0%,rgba(37,39,41,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(60,64,66,1) 0%,rgba(37,39,41,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c4042', endColorstr='#252729',GradientType=0 ); /* IE6-8 */
+		}
+	.serach{
+		 padding: 10px 5px 10px 18px; float:right;
+	}
+		.serach input{
 			float:left;
 		}
-		.head-contakt{
-			float:right; color:#d4d4d4; font-size:12px; font-family:"Droid Serif"; margin-bottom:3px;
-		}
-			.head-contakt a{
-				color:#d4d4d4;
-			}
-			.head-contakt img{
-				vertical-align:baseline; margin:0 7px 0 0;
-			}
-		.head-soc{
-			clear:right;float:right; margin-bottom:35px;
-		}
-			.head-soc img{
-				margin-left:5px;
-			}
-	.menu{
-		clear:both; float:left; width:100%; font:bold 12px "Droid Serif";
-		border-top:1px solid #494d4e;
-		border-left:1px solid #494d4e;
-		border-right:1px solid #494d4e;
-		border-radius:5px 5px 0 0;
-		background: rgb(64,68,70); /* Old browsers */
-		/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQwNDQ0NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzODNjM2QiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-		background: -moz-linear-gradient(top,  rgba(64,68,70,1) 0%, rgba(56,60,61,1) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(64,68,70,1)), color-stop(100%,rgba(56,60,61,1))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  rgba(64,68,70,1) 0%,rgba(56,60,61,1) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  rgba(64,68,70,1) 0%,rgba(56,60,61,1) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  rgba(64,68,70,1) 0%,rgba(56,60,61,1) 100%); /* IE10+ */
-		background: linear-gradient(to bottom,  rgba(64,68,70,1) 0%,rgba(56,60,61,1) 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#404446', endColorstr='#383c3d',GradientType=0 ); /* IE6-8 */
-
+		.search-txt{
+			border-radius:10px; border-top:1px solid #e5e5e5; border-bottom:2px solid #a5a6a7; border-left:1px solid #e5e5e5; border-right:1px solid #e5e5e5; font:bold 12px "Droid Serif"; color:#959595; width:130px; padding:4px 10px; margin-right:10px;
 		}
 		
-		.menu ul{
-			list-style:none;
-		}
-		.menu ul li{
-			float:left; border-left:1px solid #494e50; border-right:1px solid #2a2d2f; position:relative; top:-1px;
-		}
-		.menu ul li:first-child{
-			border-left:none;
-		}
-		.menu ul li:last-child{
-			border-right:none;
-		}
-			.menu ul li a{
-				color:#fff; padding:13px 17px; display:block; text-shadow:1px -1px 1px #000; border-bottom:4px solid #383c3e; border-top:1px solid #484c4e;
-			}
-			.menu ul li a:hover{
-				border-bottom:4px solid #d7a229; text-decoration:none; border-top:1px solid #454a4c;
-				background: rgb(59,63,65); /* Old browsers */
-				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNiM2Y0MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNTI2MjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-				background: -moz-linear-gradient(top,  rgba(59,63,65,1) 0%, rgba(37,38,40,1) 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,63,65,1)), color-stop(100%,rgba(37,38,40,1))); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top,  rgba(59,63,65,1) 0%,rgba(37,38,40,1) 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top,  rgba(59,63,65,1) 0%,rgba(37,38,40,1) 100%); /* Opera 11.10+ */
-				background: -ms-linear-gradient(top,  rgba(59,63,65,1) 0%,rgba(37,38,40,1) 100%); /* IE10+ */
-				background: linear-gradient(to bottom,  rgba(59,63,65,1) 0%,rgba(37,38,40,1) 100%); /* W3C */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3f41', endColorstr='#252628',GradientType=0 ); /* IE6-8 */
-
-			}
-		.search{
-			padding:10px 5px 10px 18px; float:right;
-		}
-			.search input{
-				float:left;
-			}
-			.search-txt{
-				border-radius:10px; border-top:1px solid #e5e5e5; border-left:1px solid #e5e5e5; border-right:1px solid #e5e5e5;  border-bottom:2px solid #a5a6a7; color:#959595; font:bold 12px "Droid Serif"; width:130px; padding:4px 10px; margin-right:10px;
-			}
-	.under-slider{
-		background:url(images/naklon-bg.jpg); padding:45px 30px; margin-bottom:40px;
+.under-slider{
+	background:url(images/naklon-bg.jpg); padding:45px 30px; margin-bottom:40px;
+}
+	.under-slider h1{
+		font:normal 24px "Droid Serif"; margin-bottom:20px;
 	}
-		.under-slider h1{
-			font: normal 24px "Droid Serif"; margin-bottom:20px;
-		}
-		.under-slider p{
-			font-size:13px; font-family:pt_sans;
-		}
+	.under-slider p{
+		font-size:13px; line-height:1.8; font-family:pt_sans;
+	}
+
 .content-main{
 	padding:0 30px 60px 30px; border-bottom:5px solid #d7a229; background:url(images/naklon-bg.jpg) bottom repeat-x; font-family:pt_sans; font-size:13px; overflow:hidden;
 }
-	.content-main p{
-		margin-bottom:20px;
-	}
+.content-main p{
+	margin-bottom:20px;
+}
 .whatwedo{
 	overflow:hidden; margin-bottom:15px;
 }
 	.whatwedo div{
-		float:left; width:212px; margin-left:30px;
+		width:212px; margin-left:30px; float:left;
 	}
 	.whatwedo div:first-child{
-		float:left; width:212px; margin-left:0;
+		width:212px; margin-left:0px; float:left;
 	}
 	.whatwedo div h1{
 		font:16px "Droid Serif"; margin-bottom:15px; background:url(images/naklon-bg.jpg) 0 6px repeat-x;
 	}
+		.whatwedo div h1 img{
+			vertical-align: bottom; margin-right:15px;
+		}
 		.whatwedo div h1 span{
 			background:#fff; padding:0 15px 0 0;
 		}
-	.center-n{
-		text-align:center; font:24px "Droid Serif"; background:url(images/naklon-bg.jpg) center repeat-x; position:relative; margin-bottom:45px;
+	.whatwedo div p{
+		font-size:13px;
 	}
-	.hnc{
-		background:#fff; padding:0 15px;
+	.whatwedo a{
+		color: #000;
+		text-decoration: underline;
 	}
-	.hnl{
-		position:absolute; right:0; top:6px; font-size:13px; font-family:pt-sans; color:#d7a229; background:#fff; padding:0 0 0 15px;
+	.whatwedo a:hover{
+		text-decoration: none;
 	}
-		.hnl a{
-			color:#d7a229;
-		}
+.center-n{
+	text-align:center; font:24px "Droid Serif"; background:url(images/naklon-bg.jpg) center repeat-x; position:relative; margin-bottom:45px;
+}
+.hnc{
+	background:#fff; padding:0 15px;
+}
+.hnl{
+	position:absolute; right:0; top:6px; font-size:13px; color:#d7a229; background:#fff; padding:0 0 0 15px;
+}
+	.hnl a{
+		color:#d7a229;
+	}
 .our-works-main{
 	overflow:hidden; margin-bottom:45px;
 }
-	.our-works{
-		float:left; margin-left:29px; background:url(images/naklon-bg.jpg); padding:0 5px 5px 0; width:208px; position:relative;
+.our-works{
+	background:url(images/naklon-bg.jpg); padding:0 5px 5px 0; width:208px; float:left; position:relative; margin-left:29px;
+}
+.our-works:first-child{
+	 margin-left:0px;
+}
+.our-work-short{
+	position:absolute; text-align:center; width:198px; height:198px; background:rgba(137, 137, 137, 0.2); border:5px solid #898989; display:none;
+}
+	.our-work-short img{
+		margin:70px 0 15px 0;
 	}
-	.our-works:first-child{
-		margin-left:0;
+	.our-work-short h3{
+		font:12px "Droid Serif"; color:#252525; margin-bottom:5px;
 	}
-	.our-work-short{
-		position:absolute; text-align:center; border:5px solid #afafaf; width:198px; height:198px; background:rgba(137, 137, 137, 0.2); display:none;
+	.our-work-short p{
+		font-size:10px; color:#555555;
 	}
-		.our-work-short img{
-			margin:70px 0 15px 0;
-		}
-		.our-work-short h3{
-			font:12px "Droid Serif"; color:#252525; margin-bottom:5px;
-		}
-		.our-work-short p{
-			font-size:10px; color:#555555;
-		}
-		a.our-work-href{
-			display:block;
-		}
-		a:hover.our-work-href .our-work-short{
-			display:block;
-		}
+	a.our-work-href{
+		 display:block;
+	}
+	a:hover.our-work-href .our-work-short{
+		display:block;
+	}
+
 .advance{
 	overflow:hidden;
 }
@@ -196,7 +217,6 @@ body{
 .img-righter{
 	float:right; margin:0 0 15px 15px;
 }
-
 .footer{
 	background:url(images/naklon-bg.jpg); margin-top:20px; font-size:12px; color:#707070; font-family:Georgia, "Times New Roman", Times, serif; overflow:hidden; padding:20px 20px 20px 30px;
 }
@@ -206,9 +226,18 @@ body{
 	.ftrmenu{
 		float:right;
 	}
+	.ftrmenu ul li{
+		display: inline;
+		border-right: 1px solid #ccc;
+	}
+	.ftrmenu ul li:last-child{
+		border: none;
+	}
 		.ftrmenu a{
-			color:#707070; margin:0 10px;
+			 color:#707070; margin:0 10px;
 		}
+		
+		
 /*		ABOUT		*/
 
 .page-title{
@@ -251,68 +280,82 @@ body{
 		float:left; margin-left:0px;
 	}
 	
-/*		PORTFOLIO		*/			
+/*		PORTFOLIO		*/	
 
 .page-nav{
-	background:url(images/naklon-smal-bg.jpg) bottom repeat-x; overflow:hidden; margin: 0 30px 50px 30px;
+	background: url(images/naklon-smal-bg.jpg) bottom repeat-x; overflow:hidden; margin:0 30px 50px 30px;
 }
 	.page-nav ul{
-		background:url(images/naklon-smal-bg.jpg) top repeat-x; overflow:hidden; list-style:none;
+		background: url(images/naklon-smal-bg.jpg) top repeat-x; overflow:hidden; list-style:none;
+	}	
+	.page-nav ul li{
+		float:left; font:15px pt_sans;
 	}
-		.page-nav ul li{
-			float:left; font:15px 'pt_sans';
-		}
-		.page-nav ul li a{
-			display:block; padding:15px 20px; color:#333;
-		}
-		.page-nav ul li a:hover{
-			border-bottom:5px solid #d7a229; color:#d7a229; text-decoration:none; padding:15px 20px 10px 20px;
-		}
+	.page-nav ul li a{
+		display:block; padding:15px 20px; color:#333;
+	}
+	.page-nav ul li a:hover{
+		border-bottom:5px solid #d7a229; color:#d7a229; text-decoration:none; padding:15px 20px 10px 20px;
+	}
+
 .artical-anons-main{
-	overflow:hidden; margin-bottom:30px; background:url(images/naklon-smal-bg.jpg) bottom repeat-x; padding:0 0 5px 0;
+	overflow:hidden; margin-bottom:30px; background: url(images/naklon-smal-bg.jpg) bottom repeat-x; padding:0 0 5px 0;
 }
 	.artical-img{
-		float:left; margin:0 30px 0 0;
+		float:left; margin: 0 30px 0 0;
 	}
 	.artical-head{
 		margin-top:10px;
 	}
-		.artical-head h1{
-			font:normal 16px "Droid Serif"; color:#363636; margin-bottom:10px;
-		}
-		.artical-head p{
-			font: 12px "pt_sans"; color:#555555;
-		}
-		a.read-more{
-			display:inline-block; width:101px; background:url(images/read-more.jpg) 0 0 no-repeat; font:bold 12px "Droid Serif"; text-align:center; color:#404040; padding:7px 0;
-		}
-		a:hover.read-more{
-			 background:url(images/read-more.jpg) 0 -29px no-repeat; text-decoration:none;
-		}
+	.artical-head h1{
+		font:normal 16px "Droid Serif"; color:#363636; margin-bottom:10px;
+	}
+	.artical-head p{
+		font:12px "pt_sans"; color:#555;
+	}
+	a.read-more{
+		display: inline-block; width:101px; background:url(images/read-more.jpg) 0 0 no-repeat; font:bold 12px "Droid Serif"; color:#404040; text-align:center; padding:7px 0;
+	}
+	a:hover.read-more{
+		background:url(images/read-more.jpg) 0 -29px no-repeat; text-decoration:none;
+	}
+	
 .pager{
-	list-style:none; overflow:hidden; float:right;
-}	
+	list-style:none; overflow:hidden; float:right; font: bold 14px pr_sans;
+}
+	.pager span.current{
+		background:#d7a229; color:#fff; margin:0 10px; padding:5px 10px; float: left;
+	}
+	.pager span.dots{
+		float: left; margin:0 10px; padding:5px 10px;
+	}
+	.pager a{
+		color:#363636; display:block; padding:5px 10px; float: left;
+	}
+
 	.pager li{
-		float:left; font:bold 14px pt_sans;
+		float:left; font:bold 14px pr_sans;
 	}
 	.pager li a{
-		color:#363636; display:block; padding:5px 10px;
+		color:#363636; display:block; padding:5px 10px; 
 	}
 	.pager li a.now{
-		color:#fff; background:#d7a229; margin:0 10px;
+		background:#d7a229; color:#fff; margin:0 10px;
 	}
 	
 /*		PORTFOLIO-SINGLE		*/
-
-.slider-portfolio{
+.slider{
+	overflow:hidden;
+}
+.slider-porfolio{
 	background:url(images/naklon-bg.jpg); padding:30px 30px 0 30px; overflow:hidden; margin-bottom:50px;
 }
-.slider-portfolio .flexslider{
-	border-bottom:none;
-}
-.slider-portfolio .flex-control-nav{
-	display:none;
-}
+	.slider-porfolio .flexslider{
+		border-bottom:none;
+	}
+	.slider-porfolio .flex-control-nav{
+		display:none;
+	}
 .content-left{
 	width:710px; float:left;
 }
@@ -320,27 +363,33 @@ body{
 		font:normal 16px "Droid Serif"; background:url(images/naklon-bg.jpg) left 12px repeat-x; margin-bottom:20px;
 	}
 	.projeact-descrip img{
-		vertical-align:bottom; margin-right:15px;
+		vertical-align: bottom; margin-right:15px;
 	}
 	.projeact-descrip span{
 		background:#fff; padding:0 20px 0 0;
 	}
 
 .right-bar{
-	width:200px; float:right; padding:7px 0 0 0;
+	width:200px; float:right;
 }
 	.right-bar h3{
 		font:normal 16px "Droid Serif"; background:url(images/naklon-bg.jpg) left center repeat-x; margin-bottom:20px;
 	}
-	.right-bar h3 span{
+	.right-bar img{
+		vertical-align: bottom; margin-right:15px;
+	}
+	.right-bar span{
 		background:#fff; padding:0 20px 0 0;
 	}
 	.right-bar ul{
 		list-style:none; margin:0 0 30px 0;
 	}
+	.right-bar ul img{
+		vertical-align:middle;
+	}
 	.right-bar a{
-		color:#333;
+		color:#333;  
 	}
 	.right-bar a:hover{
-		color:#d7a229; text-decoration:none;
+		color:#d7a229;  
 	}

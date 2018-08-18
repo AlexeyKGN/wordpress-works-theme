@@ -4,24 +4,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 
-<!--[if gte IE 9]>
-  <style type="text/css">
-    body {
-       filter: none;
-    }
-  </style>
-<![endif]-->
-        
-<!--[if lt IE 9]>
-  <style type="text/css">
-    body {
-       background:url(<?php bloginfo('template_url') ?>/images/body-bg-ie.png) 0 730px repeat-x;
-    }
-    .menu, .elastislide-wrapper{
-    	background:url(<?php bloginfo('template_url') ?>/images/opacity.png)
-    }
-  </style>
-<![endif]-->
+<!--<!--[if gte IE 9]>-->
+<!--  <style type="text/css">-->
+<!--    body {-->
+<!--       filter: none;-->
+<!--    }-->
+<!--  </style>-->
+<!--<![endif]-->-->
+<!--        -->
+<!--<!--[if lt IE 9]>-->
+<!--  <style type="text/css">-->
+<!--    body {-->
+<!--       background:url(--><?php //bloginfo('template_url') ?><!--/images/body-bg-ie.png) 0 730px repeat-x;-->
+<!--    }-->
+<!--    .menu, .elastislide-wrapper{-->
+<!--    	background:url(--><?php //bloginfo('template_url') ?><!--/images/opacity.png)-->
+<!--    }-->
+<!--  </style>-->
+<!--<![endif]-->-->
         
 <title><?php bloginfo('name') ?><?php wp_title() ?></title>
 <?php wp_head(); ?>

@@ -8,7 +8,7 @@
     </ul>
 <?php endif; ?>
 		<!-- End Elastislide Carousel -->
-                
+     
     	<div class="content-main-blocks">
 
 <?php $args = array( 'post_type' => array('post', 'page'),
@@ -21,31 +21,36 @@
 <?php if ( $page_index->have_posts() ) : while ( $page_index->have_posts() ) : $page_index->the_post(); ?>
 
 <div>
-    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
-    <h1><a href="<?php the_permalink(); ?>"><?php echo get_post_meta( get_the_ID(), 'title', true ) ?></a></h1>
+    <a href="<?php the_permalink(); ?>">
+       <?php  the_post_thumbnail('full');?>
+    </a>
+    <h1>
+        <a href="<?php the_permalink(); ?>"><?php echo get_post_meta( get_the_ID(), 'title', true ) ?></a>
+    </h1>
     <?php the_excerpt(); ?>
-    <p><a href="<?php the_permalink(); ?>" class="read-more">read more</a></p>
+    <p>
+        <a href="<?php the_permalink(); ?>" class="read-more">read more</a>
+    </p>
 </div>
 
 <?php endwhile; ?>
 <!-- post navigation -->
 <?php else: ?>
 <div>
-    <p>Добавьте к страницам/записям произвольное поле "title" с неободимым заголовком для вывода на главную страницу</p>
+    <p>Добавьте к страницам/записям произвольное поле "title" с необходимым заголовком для вывода на главную страницу</p>
     <p>Второе произвольное поле - "order" - будет использовано для сортировки</p>
 </div>
 <div>
-    <p>Добавьте к страницам/записям произвольное поле "title" с неободимым заголовком для вывода на главную страницу</p>
+    <p>Добавьте к страницам/записям произвольное поле "title" с необходимым заголовком для вывода на главную страницу</p>
     <p>Второе произвольное поле - "order" - будет использовано для сортировки</p>
 </div>
 <div>
-    <p>Добавьте к страницам/записям произвольное поле "title" с неободимым заголовком для вывода на главную страницу</p>
+    <p>Добавьте к страницам/записям произвольное поле "title" с необходимым заголовком для вывода на главную страницу</p>
     <p>Второе произвольное поле - "order" - будет использовано для сортировки</p>
 </div>
 <?php endif; ?>
-        
             
         </div>
-    </div>  
+    </div>
 </div>
 <?php get_footer(); ?>
